@@ -38,7 +38,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user_id = user.id
     user_name = user.full_name
     pandora = shelve.open("pandora")
-    if user_id not in pandora.keys():
+    if str(user_id) not in pandora.keys():
      user_data ={
          "user_name":user_name,
          "subs": "free",
